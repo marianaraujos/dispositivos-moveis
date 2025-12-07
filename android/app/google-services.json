@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "867476070936",
+    "firebase_url": "https://recicla-the-ifpi-default-rtdb.firebaseio.com",
+    "project_id": "recicla-the-ifpi",
+    "storage_bucket": "recicla-the-ifpi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867476070936:android:55f65a1bb8a16ad709596d",
+        "android_client_info": {
+          "package_name": "com.example.recicla_the"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPe6OV698Hzeq9saEfx6_cyyXXIm4vS8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
