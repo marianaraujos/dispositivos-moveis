@@ -64,7 +64,23 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('LOGIN')),
+      appBar: AppBar(
+        title: const Text('LOGIN'),
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          fontSize: 22,
+          fontFamily: 'Nunito',
+          fontWeight: FontWeight.w600,
+          fontStyle: FontStyle.normal,
+          color: Colors.brown[800],
+          decoration: TextDecoration.underline,
+          decorationStyle: TextDecorationStyle.wavy,
+          decorationColor: Colors.green[200],
+          letterSpacing: 1.1
+        ),
+        backgroundColor: Colors.green[300],
+        
+        ),
       body: SingleChildScrollView(
           child: Column(
         children: <Widget>[

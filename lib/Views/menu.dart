@@ -31,6 +31,26 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("ReciclaTHE"),
+        centerTitle: true,
+        backgroundColor: Colors.green[300],
+        elevation: 4,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).popUntil((route) => route.isFirst);
+          }, 
+          icon: Icon(Icons.logout)),
+        titleTextStyle:  TextStyle(
+          fontSize: 22,
+          fontFamily: 'Nunito',
+          fontWeight: FontWeight.w600,
+          fontStyle: FontStyle.italic,
+          color: Colors.brown[800],
+          decoration: TextDecoration.underline,
+          decorationStyle: TextDecorationStyle.wavy,
+          decorationColor: Colors.green[200],
+          letterSpacing: 1.1
+)
+ ,
       ),
 
       body: pages[_selectedIndex],
