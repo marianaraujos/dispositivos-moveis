@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -42,7 +42,7 @@ class _MapaState extends State<Mapa> {
 
   // CARREGAR O ÍCONE PERSONALIZADO
   Future<void> _addCustomIcon() async {
-    markerIcon = await _bitmapFromAsset("assets/images/recycle.png", 50);
+    markerIcon = await _bitmapFromAsset("assets/images/reciclathe.png", 60);
     setState(() {});
   }
 
