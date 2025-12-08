@@ -7,7 +7,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:recicla_the/Data/banco.dart';
 import 'dart:ui' as ui;
 
-
 class Mapa extends StatefulWidget {
   const Mapa({super.key, required this.id});
   final String id;
@@ -25,23 +24,21 @@ class _MapaState extends State<Mapa> {
 
   // FUNÇÃO PARA REDIMENSIONAR O ASSET
   Future<BitmapDescriptor> _bitmapFromAsset(String path, int width) async {
-  final ByteData data = await rootBundle.load(path);
-  final Uint8List bytes = data.buffer.asUint8List();
+    final ByteData data = await rootBundle.load(path);
+    final Uint8List bytes = data.buffer.asUint8List();
 
-  final ui.Codec codec = await ui.instantiateImageCodec(
-    bytes,
-    targetWidth: width,
-  );
-  final ui.FrameInfo fi = await codec.getNextFrame();
+    final ui.Codec codec = await ui.instantiateImageCodec(
+      bytes,
+      targetWidth: width,
+    );
+    final ui.FrameInfo fi = await codec.getNextFrame();
 
-  final ByteData? resized = await fi.image.toByteData(
-    format: ui.ImageByteFormat.png,
-  );
+    final ByteData? resized = await fi.image.toByteData(
+      format: ui.ImageByteFormat.png,
+    );
 
-  return BitmapDescriptor.bytes(
-    resized!.buffer.asUint8List(),
-  );
-}
+    return BitmapDescriptor.bytes(resized!.buffer.asUint8List());
+  }
 
   // CARREGAR O ÍCONE PERSONALIZADO
   Future<void> _addCustomIcon() async {
@@ -93,7 +90,6 @@ class _MapaState extends State<Mapa> {
     });
   }
 
-
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -132,7 +128,6 @@ class _MapaState extends State<Mapa> {
     return await Geolocator.getCurrentPosition();
   }
 
-
   // GARANTE QUE ÍCONE É CARREGADO ANTES DOS MARCADORES
   Future<void> _inicializar() async {
     await _addCustomIcon();
@@ -144,24 +139,17 @@ class _MapaState extends State<Mapa> {
     super.initState();
     _inicializar();
     _determinePosition();
-
-    
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Mapa"),
-      ),
-      body: GoogleMap(
-        zoomGesturesEnabled: true,
-        onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(target: _center, zoom: 7.0),
-        markers: _marcadores,
-        myLocationEnabled: true,            
-        myLocationButtonEnabled: true,
-      ),
+    return GoogleMap(
+      zoomGesturesEnabled: true,
+      onMapCreated: _onMapCreated,
+      initialCameraPosition: CameraPosition(target: _center, zoom: 7.0),
+      markers: _marcadores,
+      myLocationEnabled: true,
+      myLocationButtonEnabled: true,
     );
   }
 }

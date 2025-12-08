@@ -3,9 +3,7 @@ import 'package:recicla_the/Models/estabelecimento.dart';
 
 // Importação das telas reais
 
-
-
-import 'package:recicla_the/Views/cadastro.dart';
+import 'package:recicla_the/Views/cadastro_contato.dart';
 import 'package:recicla_the/Views/mapa.dart';
 import 'package:recicla_the/Views/meus_contatos.dart';
 
@@ -26,7 +24,7 @@ class _MenuState extends State<Menu> {
     final pages = [
       _boasVindasPage(),
       Mapa(id: widget.estabelecimento.id),
-      Cadastro(),
+      CadastroContato(id: widget.estabelecimento.id),
       MeusContatos(id: widget.estabelecimento.id),
     ];
 
@@ -44,10 +42,14 @@ class _MenuState extends State<Menu> {
             _selectedIndex = value;
           });
         },
+        
+        indicatorColor:Colors.green,
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
             label: "Início",
+          
+
           ),
           NavigationDestination(
             icon: Icon(Icons.map_outlined),
@@ -59,7 +61,7 @@ class _MenuState extends State<Menu> {
           ),
           NavigationDestination(
             icon: Icon(Icons.business_outlined),
-            label: "Estabelecimentos",
+            label: "Locais",
           )
         ],
       ),
@@ -80,7 +82,7 @@ class _MenuState extends State<Menu> {
           ),
           const SizedBox(height: 16),
           const Text(
-            "Gerencie seus pontos de coleta, cadastre novos locais\n"
+            " Encontre pontos de coleta, cadastre novos locais\n"
             "e visualize tudo no mapa.",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16),
