@@ -32,7 +32,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Projeto Final',
       theme: ThemeData(        
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        cardColor: Colors.green,
+      
+
+        
       ),
       debugShowCheckedModeBanner: false,
       home: const Login(title: 'Tela de Login'),
