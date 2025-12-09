@@ -13,12 +13,6 @@ O aplicativo foi construído utilizando a arquitetura MVC (Model-View-Controller
 - Praticidade: O usuário pode se movimentar pela cidade e rapidamente verificar o local mais próximo para o descarte de diversos tipos de resíduos, como papel, plástico, vidro, metal, entre outros.
 
 ## Imagem das Telas
-![Screenshot_20251208_215705](https://github.com/user-attachments/assets/ff4f8df9-3820-4f6f-9b02-cf3b21c3d4f6)
 
-![Screenshot_20251208_215603](https://github.com/user-attachments/assets/b1c45baa-2773-419d-a4d7-3f55c0ce8da6)
-
-![Screenshot_20251208_215642](https://github.com/user-attachments/assets/881c5a95-57ad-4e8e-80b5-f523f61ca3ce)
-![Screenshot_20251208_215649](https://github.com/user-attachments/assets/2d89434f-d97b-47c4-9c44-f6013ac72f10)
-
-![Screenshot_20251208_215658](https://github.com/user-attachments/assets/aebfa998-bd5f-4f33-87dc-b419ed435da1)
+<img width="1920" height="1080" alt="Design sem nome" src="https://github.com/user-attachments/assets/0705fbc3-a804-4e45-bc9f-33fff35071f3" />
 
