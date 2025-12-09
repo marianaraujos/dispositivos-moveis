@@ -37,9 +37,10 @@ class _MenuState extends State<Menu> {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).popUntil((route) => route.isFirst);
-          }, 
-          icon: Icon(Icons.logout)),
-        titleTextStyle:  TextStyle(
+          },
+          icon: Icon(Icons.logout),
+        ),
+        titleTextStyle: TextStyle(
           fontSize: 22,
           fontFamily: 'Nunito',
           fontWeight: FontWeight.w600,
@@ -47,10 +48,9 @@ class _MenuState extends State<Menu> {
           color: Colors.brown[800],
           decoration: TextDecoration.underline,
           decorationStyle: TextDecorationStyle.wavy,
-          decorationColor: Colors.green[200],
-          letterSpacing: 1.1
-)
- ,
+          decorationColor: Colors.green,
+          letterSpacing: 1.1,
+        ),
       ),
 
       body: pages[_selectedIndex],
@@ -62,19 +62,14 @@ class _MenuState extends State<Menu> {
             _selectedIndex = value;
           });
         },
-        
-        indicatorColor:Colors.green,
+
+        indicatorColor: Colors.green,
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
             label: "Início",
-          
-
           ),
-          NavigationDestination(
-            icon: Icon(Icons.map_outlined),
-            label: "Mapa",
-          ),
+          NavigationDestination(icon: Icon(Icons.map_outlined), label: "Mapa"),
           NavigationDestination(
             icon: Icon(Icons.add_circle_outline),
             label: "Cadastrar",
@@ -82,7 +77,7 @@ class _MenuState extends State<Menu> {
           NavigationDestination(
             icon: Icon(Icons.business_outlined),
             label: "Locais",
-          )
+          ),
         ],
       ),
     );
@@ -95,30 +90,61 @@ class _MenuState extends State<Menu> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 20),
-          const Text(
+          const SizedBox(height: 25),
+
+          Text(
             "Bem-vindo ao ReciclaTHE!",
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w800,
+              color: Colors.green,
+            ),
           ),
-          const SizedBox(height: 16),
-          const Text(
-            " Encontre pontos de coleta, cadastre novos locais\n"
-            "e visualize tudo no mapa.",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(height: 20),
+
+          const SizedBox(height: 18),
 
           Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: SizedBox(
-              height: 320,
-              child: Image.asset(
-                'assets/images/reciclathe.png',
-                fit: BoxFit.cover,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              "Encontre pontos de coleta, cadastre novos locais e visualize tudo no mapa.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 17,
+                height: 1.4,
+                color: Colors.grey.shade700,
               ),
             ),
           ),
+
+          const SizedBox(height: 25),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Container(
+              height: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.green.shade50,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    spreadRadius: 1,
+                    blurRadius: 6,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/images/reciclathe.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 20),
         ],
       ),
     );
